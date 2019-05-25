@@ -1,0 +1,51 @@
+// **************************************
+// Universal Select
+// **************************************
+
+
+* {
+    box-sizing: border-box;
+  }
+
+// **************************************
+// UL
+// **************************************
+
+ul {
+    list-style-type: none;
+  }
+
+// **************************************
+// P
+// **************************************
+
+.container {
+    color: $color-text;
+    font-size: 1em;
+    line-height: 1.5;
+    padding-bottom: 5em;
+    font-family: $font-prim;
+  }
+
+.card {
+  text-align: left;
+}
+
+
+// **************************************
+// A
+// **************************************
+
+.nav a {
+    @extend %a-style;
+    padding: 1em;
+    color: $color-text-dark;
+    &:hover {
+      color: $white;
+    }
+  }
+  
+.grid__col--8 a {
+    @extend %a-style;
+    color: $color-sec;
+  }

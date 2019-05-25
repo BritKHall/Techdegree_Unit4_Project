@@ -1,0 +1,44 @@
+
+//colors
+
+$white: #ffffff;
+
+$color-text: #b1b0b0;
+$color-text-light: lighten($color-text, 10%);
+$color-text-dark: darken($color-text, 20%);
+
+$color-prim: #59d7ad;
+$color-sec: #5bdef0;
+$color-prim-light: lighten($color-prim, 10%);
+$color-sec-light: lighten($color-sec, 10%);
+$color-sec-dark: darken($color-sec, 20%);
+
+
+$button-green: #83d38e;
+$button-red: #da6464;
+$button-orange: #f9704d;
+$button-purple: #c39ad8;
+$button-green-light: lighten($button-green, 10%);
+$button-red-light: lighten($button-red, 10%);
+$button-orange-light: lighten($button-orange, 10%);
+$button-purple-light: lighten($button-purple, 10%);
+
+
+$themes: (
+  '--12': $color-prim-light,
+  '--6': $color-sec-dark,
+  '--4': $color-sec-light,
+  '--3': $button-purple-light,
+  '--5': $button-green-light,
+  '--7': $button-red-light,
+  '--8': $button-orange-light,
+);
+
+// Fonts
+$font-prim: 'Helvetica Neue', 'Helvetica', sans-serif;
+
+// Breakpoint
+
+$breakpoints: (
+  'md': 768px,
+);

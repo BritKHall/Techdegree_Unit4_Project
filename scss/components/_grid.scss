@@ -6,6 +6,12 @@
 // but additional styling may be needed
 // **********************************************
 
+.grid__col--12 {
+  @include mq('md') {
+    @include flex-me($dir:row, $just:space-around);
+  }
+}
+
 
 // grid base class
 .grid {
@@ -15,10 +21,11 @@
     padding: 1em 10px;
     display: flex;
     flex-direction: column;
+    color:$color-text-dark;
 
     // NOTE: replace with media query mixin if aiming for exceeds
-    @media (min-width: 768px) {
-      flex-direction: row;
+    @include mq('md') {
+      @include flex-me($dir:row, $just:center);
     }
   }
 
@@ -36,11 +43,12 @@
         // base styles applied to all grid columns 
         // NOTE: could be converted to a placeholder, along with margin
         // from the  media query
-        margin-top: 10px;
+        margin-top: .3em;
+        padding-bottom: 2em;
         flex-basis: 100%;
 
         // NOTE: replace with media query mixin if aiming for exceeds
-        @media (min-width: 768px) {
+        @include mq('md') {
 
           // base stlyes applied to all grid columns
           margin-top: 0;
@@ -54,13 +62,30 @@
 }
 
 // targets all elements with classes that begin with grid__col
+
+@each $theme, $color in $themes{
+  .grid__col#{$theme}.theme__colors {
+    background-color: $color;
+    text-align: left;
+    padding-left: .8em;
+    padding-top: .25em;
+    padding-bottom: .25em;
+    border-radius: .25em;
+    @include mq('md') {
+      text-align: center;
+    }
+  }
+}
+
 [class^=grid__col] {
   // grid__col + grid__col, targets two sibling columns
   & + & {
 
     // NOTE: replace with media query mixin if aiming for exceeds
-    @media (min-width: 768px) {
-
+   
+    @include mq('md') {
+      @include center;
+      
       // add grid gutter
       margin-left: 10px;
     }

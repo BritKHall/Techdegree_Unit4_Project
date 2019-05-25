@@ -1,0 +1,23 @@
+
+.img {
+  &--avatar {
+    @extend %img-circ;
+    @include center;
+  }
+
+  &--frame {
+    max-width: 100%;
+    border: 1px solid $color-text;
+    padding: .8em;
+  }
+
+  &--logo {
+    @include mq('md') {
+      align-self: flex-start;
+      margin-right: auto;
+    }
+  }
+}
+  
+
+
